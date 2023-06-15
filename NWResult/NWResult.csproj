@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Manage easily results, errors and exceptions</Title>
+    <Copyright>Mirko Sacripanti</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <IncludeSymbols>True</IncludeSymbols>
+    <AssemblyVersion>2306.15.1.0</AssemblyVersion>
+    <FileVersion>2306.15.1.0</FileVersion>
+    <Version>230615.1.0</Version>
+  </PropertyGroup>
+
+</Project>

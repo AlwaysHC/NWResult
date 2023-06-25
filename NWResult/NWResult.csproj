@@ -5,14 +5,19 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>Manage easily results, errors and exceptions</Title>
+    <Title>Manage results, errors and exceptions easily</Title>
     <Copyright>Mirko Sacripanti</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <IncludeSymbols>True</IncludeSymbols>
-    <AssemblyVersion>2306.15.1.0</AssemblyVersion>
-    <FileVersion>2306.15.1.0</FileVersion>
-    <Version>230615.1.0</Version>
+    <AssemblyVersion>2306.25.1.3</AssemblyVersion>
+    <FileVersion>2306.25.1.3</FileVersion>
+    <Version>230625.1.3</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/AlwaysHC/NWResult/</PackageProjectUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 </Project>

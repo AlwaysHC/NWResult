@@ -59,10 +59,6 @@ public sealed record Result<TValue, TError> {
         get;
     }
 
-    public Exception? Exception {
-        get; private set;
-    }
-
     public Result(TValue value) {
         _Value = value;
         _Error = default!;
@@ -101,21 +97,17 @@ public sealed record Result<TValue, TError> {
            ? value(_Value)
            : IsError
              ? error(_Error)
-             : throw Exception ?? new NullReferenceException("No Value, no Error, no Exception");
+             : throw new NullReferenceException("No Value, no Error");
 
     public TResult Value<TResult>(Func<TValue, TResult> value, TResult @default = default!)
         => IsValue
            ? value(_Value)
-           : Exception != null
-             ? throw Exception
-             : @default;
+           : @default;
 
     public TResult Error<TResult>(Func<TError, TResult> error, TResult @default = default!)
         => IsError
            ? error(_Error)
-           : Exception != null
-             ? throw Exception
-             : @default;
+           : @default;
 
     /// <summary>
     /// Use this overload when you DON'T want to chain ElseError
@@ -125,18 +117,12 @@ public sealed record Result<TValue, TError> {
            ? value(_Value)
            : IsError
              ? @default
-             : Exception != null
-               ? throw Exception
-               : (TResult)_Result!;
+             : (TResult)_Result!;
 
     /// <summary>
     /// Use this overload when you WANT to chain ElseError and you want the lambda RETURN a value
     /// </summary>
     public ResultElseFunc<TResult> IfValue<TResult>(Func<TValue, TResult> value) {
-        if (Exception != null) {
-            throw Exception;
-        }
-
         if (IsValue) {
             _Result = value(_Value);
         }
@@ -148,10 +134,6 @@ public sealed record Result<TValue, TError> {
     /// Use this overload when you WANT to chain ElseError and you want to JUST EXECUTE code inside the lambda
     /// </summary>
     public ResultElseAction IfValue(Action<TValue> value) {
-        if (Exception != null) {
-            throw Exception;
-        }
-
         if (IsValue) {
             value(_Value);
         }
@@ -264,9 +246,6 @@ public sealed record Result<TValue, TError> {
         public void ElseError(Action<TError> error) {
             if (_Result.IsError) {
                 error(_Result._Error);
-            }
-            else if (_Result.Exception != null) {
-                throw _Result.Exception;
             }
         }
     }

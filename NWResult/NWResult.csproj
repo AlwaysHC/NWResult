@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -10,9 +10,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <IncludeSymbols>True</IncludeSymbols>
-    <AssemblyVersion>2306.26.1.4</AssemblyVersion>
-    <FileVersion>2306.26.1.4</FileVersion>
-    <Version>230626.1.4</Version>
+    <AssemblyVersion>2507.25.1.5</AssemblyVersion>
+    <FileVersion>2507.25.1.5</FileVersion>
+    <Version>2507.25.1.5</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/AlwaysHC/NWResult/</PackageProjectUrl>
   </PropertyGroup>

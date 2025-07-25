@@ -15,7 +15,7 @@ Usage:
 The library permits a functional or a procedural usage of the results.
 
 
-- Functional without Exception manangement:
+- Functional without Exception management:
 
 ```csharp
 string R = FuncOK().OnlyIfValue(v => v + v, "Default"); // "OKOK"
@@ -27,7 +27,7 @@ string R = FuncErr().IfValue(v => v + v).ElseError(e => e.ToString())); // "-1"
 string R = FuncEx().IfValue(v => v + v).ElseError(e => e.ToString())); // Exception
 ```
 
-- Functional with Exception manangement:
+- Functional with Exception management:
 - 
 ```csharp
 string R = Result.WithException(FuncOK).Exception(ex => ex.Message).OnlyIfValue(v => v + v, "Default"); // "OKOK"
@@ -39,7 +39,7 @@ string R = Result.WithException(FuncErr).Exception(ex => ex.Message).IfValue(v =
 string R = Result.WithException(FuncEx).Exception(ex => ex.Message).IfValue(v => v + v).ElseError(e => e.ToString())); // "Exception"
 ```
 
-- Procedural without Exception manangement:
+- Procedural without Exception management:
 ```csharp
 string Test = "";
 
@@ -52,7 +52,7 @@ FuncErr().IfValue(v => Test = v + v).ElseError(e => Test = e.ToString();
 FuncEx().IfValue(v => Test = v + v).ElseError(e => Test = e.ToString());
 ```
 
-- Procedural with Exception manangement:
+- Procedural with Exception management:
 ```csharp
 string Test = "";
 
